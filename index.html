@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>UAE Climate Hub 🌍</title>
+  <title>UAE Climate Hub</title>
   <link rel="icon" type="image/png" href="Picture1.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
@@ -184,8 +184,8 @@
 
   <!-- RIGHT: Content -->
   <div>
-    <h1>Carbon Footprint Tracker 🌱</h1>
-    <p>Estimate your personal CO₂ emissions and see whether your impact on the environment is low, neutral, or high.</p>
+    <h1>Carbon Footprint and Climate Tracker</h1>
+    <p>Estimate your personal CO₂ emissions and see whether your impact on the environment is low, normal, or high.<br>Also check what the climate is like!<br><br>Made By Muhummad Ashaz Azmi 9E :D</p>
 
     <div class="card" style="max-width:420px; margin-top:30px;">
       <label class="label">Daily electricity usage (hours)</label>
@@ -228,21 +228,25 @@
   </div>
 </section>
 
+<section>
+  <div class="section-title">How to follow UV index properly</div>
+  <div class="info">
+    
+The UV Index is a scale from 1 to 11+, and the higher the number, the greater the risk of harm from unprotected sun exposure.<br> Here’s a quick guide: <ul><li>0-2 (Low): Safe to be outside. Minimal sun protection needed.</li><li>3-5 (Moderate): Some risk. Shade, sunscreen, and sunglasses are smart.</li><li>High (6-7): High risk; take precautions such as wearing sunscreen and protective clothing.</li><li>Very High (8-10): Very high risk; avoid sun exposure during midday hours.</li><li>Extreme (11 and above): Extreme risk; take all precautions to avoid sun exposure.</li></ul>
+  </div>
+</section>
+
 <footer>
   Data provided by <a href="https://open-meteo.com" target="_blank" class="source">Open‑Meteo (Open‑Source Weather API)</a><br>
-  Hosted using GitHub Pages • Educational project
+  Refresh for latest data every time
 </footer>
 
 <script>
   function calculateCO2() {
     const electricity = Number(document.getElementById("electricity").value || 0);
     const travel = Number(document.getElementById("travel").value || 0);
-
-    // Rough estimates
-    // Assume average household power draw ≈ 1 kW
-    // So hours ≈ kWh
-    const electricityCO2 = electricity * 0.4; // kg CO2 per hour
-    const travelCO2 = travel * 0.21; // kg CO2 per km
+    const electricityCO2 = electricity * 0.4;
+    const travelCO2 = travel * 0.21; 
     const total = (electricityCO2 + travelCO2).toFixed(2);
 
     let status = "Low";
@@ -264,7 +268,7 @@
     `;
 
     resultBox.classList.remove("show");
-    void resultBox.offsetWidth; // reflow
+    void resultBox.offsetWidth; 
     resultBox.classList.add("show");
   }
 
@@ -295,5 +299,6 @@
 
 </body>
 </html>
+
 
 
