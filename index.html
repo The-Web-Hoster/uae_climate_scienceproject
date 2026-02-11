@@ -1,141 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <title>UAE Climate Hub</title>
 <link rel="icon" type="image/png" href="Picture1.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: radial-gradient(circle at top, #0f3d2e, #000 60%);
-  color: #c8facc;
-  overflow-x: hidden;
-}
-
-header {
-  min-height: 100vh;
-  display: flex;                /* Use flex for full centering */
-  flex-direction: column;
-  justify-content: center;      /* Vertical center */
-  align-items: center;          /* Horizontal center */
-  text-align: center;
-  padding: 0 8%;
-  background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,1));
-}
-
-header h1 {
-  font-size: 3.2rem;
-  margin: 20px 0 0 0;
-  animation: fadeDown 1.2s ease;
-}
-
-header p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  opacity: 0.9;
-  animation: fadeUp 1.2s ease;
-}
-
-.scroll-indicator {
-  margin-top: 40px;
-  font-size: 0.9rem;
-  opacity: 0.7;
-  animation: bounce 2s infinite;
-}
-
-section {
-  padding: 80px 10%;
-}
-
-.section-title {
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-  border-left: 5px solid #4caf50;
-  padding-left: 15px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: rgba(0,0,0,0.7);
-  border: 1px solid #1b5e20;
-  border-radius: 14px;
-  padding: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 0 rgba(76,175,80,0);
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(76,175,80,0.3);
-}
-
-#result {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease, opacity 0.6s ease;
-}
-
-#result.show { max-height: 120px; opacity: 1; }
-
-.value { font-size: 2.5rem; font-weight: bold; color: #7CFF7C; }
-.label { margin-top: 8px; font-size: 0.95rem; opacity: 0.8; }
-.source { display: inline-block; margin-top: 10px; font-size: 0.8rem; color: #81c784; text-decoration: none; border-bottom: 1px dashed transparent; transition: border 0.3s; }
-.source:hover { border-bottom: 1px dashed #81c784; }
-.info { max-width: 900px; line-height: 1.8; opacity: 0.9; font-weight: bold;}
-
-footer {
-  padding: 40px 10%;
-  background: #000;
-  border-top: 1px solid #1b5e20;
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-
-.uae-flag {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.7));
-  border-radius: 12px;
-  outline: 3px solid rgba(255,255,255,0.6);
-  outline-offset: 8px;
-  transition: outline 0.4s ease, outline-offset 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-  margin-bottom: 20px;
-}
-
-.uae-flag:hover {
-  outline: 4px solid #ffffff;
-  outline-offset: 14px;
-  transform: scale(1.03);
-  box-shadow: 0 0 40px rgba(255,255,255,0.35);
-}
-
-@keyframes fadeDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+body { margin:0; font-family:"Segoe UI", Arial, sans-serif; background:radial-gradient(circle at top,#0f3d2e,#000 60%); color:#c8facc; overflow-x:hidden; }
+header { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 8%; background:linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,1)); }
+header h1 { font-size:3.2rem; margin:20px 0 0 0; animation:fadeDown 1.2s ease; text-shadow:0 0 8px #7cff7c,0 0 12px #7cff7c; }
+header p { font-size:1.2rem; max-width:600px; opacity:0.9; animation:fadeUp 1.2s ease; text-shadow:0 0 6px #7cff7c; }
+.scroll-indicator { margin-top:40px; font-size:0.9rem; opacity:0.7; animation:bounce 2s infinite; }
+section { padding:80px 10%; transition:opacity 0.6s ease; }
+.section-title { font-size:2.2rem; margin-bottom:30px; border-left:5px solid #4caf50; padding-left:15px; text-shadow:0 0 10px #4caf50; }
+.cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:25px; }
+.card { background: rgba(0,0,0,0.7); border:1px solid #1b5e20; border-radius:14px; padding:25px; transition:transform 0.3s ease, box-shadow 0.3s ease; box-shadow:0 0 0 rgba(76,175,80,0); text-shadow:0 0 8px #7cff7c; }
+.card:hover { transform:translateY(-10px) scale(1.02); box-shadow:0 20px 40px rgba(76,175,80,0.3); }
+#result { max-height:0; opacity:0; overflow:hidden; transition:max-height 0.6s ease, opacity 0.6s ease; text-shadow:0 0 6px #7cff7c; }
+#result.show { max-height:500px; opacity:1; }
+.value { font-size:2.5rem; font-weight:bold; color:#7CFF7C; text-shadow:0 0 10px #7cff7c; }
+.label { margin-top:8px; font-size:0.95rem; opacity:0.8; }
+.source { display:inline-block; margin-top:10px; font-size:0.8rem; color:#81c784; text-decoration:none; border-bottom:1px dashed transparent; transition:border 0.3s; }
+.source:hover { border-bottom:1px dashed #81c784; }
+.info { max-width:900px; line-height:1.8; opacity:0.9; font-weight:bold; text-shadow:0 0 4px #7cff7c; }
+footer { padding:40px 10%; background:#000; border-top:1px solid #1b5e20; font-size:0.85rem; opacity:0.8; }
+.uae-flag { width:100%; max-width:480px; height:auto; filter:drop-shadow(0 20px 40px rgba(0,0,0,0.7)); border-radius:12px; outline:3px solid rgba(255,255,255,0.6); outline-offset:8px; transition:outline 0.4s ease, outline-offset 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease; margin-bottom:20px; }
+.uae-flag:hover { outline:4px solid #ffffff; outline-offset:14px; transform:scale(1.03); box-shadow:0 0 40px rgba(255,255,255,0.35); }
+@keyframes fadeDown { from {opacity:0; transform:translateY(-40px);} to {opacity:1; transform:translateY(0);} }
+@keyframes fadeUp { from {opacity:0; transform:translateY(40px);} to {opacity:1; transform:translateY(0);} }
 @keyframes bounce { 0%,20%,50%,80%,100% { transform: translateY(0); } 40% { transform: translateY(10px); } 60% { transform: translateY(5px); } }
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-  header h1 { font-size: 2.2rem; }
-  header p { font-size: 1rem; }
-  .cards { grid-template-columns: 1fr; }
+@media (max-width: 768px) { header h1{font-size:2.2rem;} header p{font-size:1rem;} .cards{grid-template-columns:1fr;} .topbar{flex-direction:column;justify-content:center;} .switch-buttons{margin:10px 0;} }
+.topbar {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 20px;
+  background:rgba(0,0,0,0.8);
+  border-bottom:2px solid #4caf50;
+  z-index:1000;
+  opacity:0;
+  transition:opacity 0.6s ease;
+  text-shadow:0 0 6px #7cff7c;
 }
+.topbar.show { opacity:1; }
+
+.topbar img { height:40px; filter:drop-shadow(0 0 12px #7cff7c); }
+
+.switch-buttons { display:flex; justify-content:center; flex:1; }
+.switch-buttons button { padding:8px 16px; border:none; border-radius:8px; margin:0 8px; cursor:pointer; background:#4caf50; color:#000; font-weight:bold; text-shadow:0 0 6px #7cff7c; transition:all 0.5s ease; }
+.switch-buttons button.active { box-shadow:0 0 20px #7cff7c; transform:scale(1.1); }
+
+.topbar > div:first-child { flex:0 0 auto; } /* COP image left */
+.topbar > div:last-child { flex:0 0 auto; } /* Text right */
+
 </style>
 </head>
 <body>
 
 <header>
-  <!-- FLAG ABOVE CONTENT -->
   <svg class="uae-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
     <rect width="60" height="30" fill="#ffffff"/>
     <rect width="15" height="30" fill="#ff0000"/>
@@ -143,46 +71,43 @@ footer {
     <rect x="15" y="10" width="45" height="10" fill="#ffffff"/>
     <rect x="15" y="20" width="45" height="10" fill="#000000"/>
   </svg>
-
   <h1>Carbon Footprint and Climate Tracker</h1>
   <p>Estimate your personal CO₂ emissions and see whether your impact on the environment is low, normal, or high.<br>
      Also check what the climate is like!<br><br>
-     Made By Muhammad Ashaz Azmi 9E :D
+     
   </p>
-
-  <div class="card" style="max-width:420px; margin-top:30px;">
-    <label class="label">Daily electricity usage (hours)</label>
-    <input id="electricity" type="number" placeholder="e.g. 6" style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;">
-    <label class="label">Car travel (km per day)</label>
-    <input id="travel" type="number" placeholder="e.g. 30" style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;">
-    <button onclick="calculateCO2()" style="width:100%; padding:12px; border-radius:10px; background:#4caf50; color:#000; font-weight:bold; border:none; cursor:pointer;"> Calculate Footprint </button>
-    <div id="result" style="margin-top:20px; font-size:1.1rem;"></div>
-  </div>
-
   <div class="scroll-indicator">⬇ Scroll for UAE climate data</div>
 </header>
 
-<section>
+<div class="topbar" id="topbar">
+  <div style="display:flex; align-items:center;">
+    <img src="Picture1.png">
+  </div>
+  <div class="switch-buttons">
+    <button id="btnClimate" class="active" onclick="showSection('climate')">Climate Data</button>
+    <button id="btnFootprint" onclick="showSection('footprint')">Carbon Footprint</button>
+  </div>
+  <div style="display:flex; align-items:center;">
+    <span>Made By Muhammad Ashaz 9E :D</span>
+  </div>
+</div>
+
+
+<section id="climateSection">
   <div class="section-title">Live Climate Data</div>
   <div class="cards" id="weatherData"></div>
-</section>
 
-<section>
-  <div class="section-title">About the UAE Climate</div>
+  <BR><BR><div class="section-title">About the UAE Climate</div>
   <div class="info">
     The UAE has a desert climate characterized by extremely hot summers, mild winters, low rainfall, and very high UV levels. Monitoring environmental data such as temperature, UV index, and daylight hours is important for health, sustainability, and climate awareness.
   </div>
-</section>
 
-<section>
-  <div class="section-title">Why This Data Matters</div>
+  <BR><BR><div class="section-title">Why This Data Matters</div>
   <div class="info">
     High temperatures and UV levels impact human health, water consumption, and energy use. Live environmental dashboards like this help people make safer daily decisions and raise awareness about climate change and environmental protection.
   </div>
-</section>
 
-<section>
-  <div class="section-title">How to follow UV index properly</div>
+  <BR><BR><div class="section-title">How to follow UV index properly</div>
   <div class="info">
     The UV Index is a scale from 1 to 11+, and the higher the number, the greater the risk of harm from unprotected sun exposure.<br>
     Here’s a quick guide:
@@ -196,42 +121,87 @@ footer {
   </div>
 </section>
 
+<section id="footprintSection" style="display:none;opacity:0;text-align:center;">
+  <div class="section-title">Carbon Footprint Calculator</div>
+  <div class="card" style="max-width:500px;margin:0 auto;">
+    <label class="label">Daily electricity usage (hours)</label>
+    <input id="electricity" type="number" placeholder="e.g. 6" style="width:100%;padding:10px;margin:10px 0;border-radius:8px;border:none">
+    <label class="label">Car travel (km per day)</label>
+    <input id="travel" type="number" placeholder="e.g. 30" style="width:100%;padding:10px;margin:10px 0;border-radius:8px;border:none">
+    <label class="label">Public Transport (km per day)</label>
+    <input id="publicTransport" type="number" placeholder="e.g. 15" style="width:100%;padding:10px;margin:10px 0;border-radius:8px;border:none">
+    <label class="label">Daily meat consumption (grams)</label>
+    <input id="meat" type="number" placeholder="e.g. 200" style="width:100%;padding:10px;margin:10px 0;border-radius:8px;border:none">
+    <label class="label">Plastic usage (bags per day)</label>
+    <input id="plastic" type="number" placeholder="e.g. 2" style="width:100%;padding:10px;margin:10px 0;border-radius:8px;border:none">
+    <button onclick="calculateCO2()" style="width:100%;padding:12px;border-radius:10px;background:#4caf50;color:#000;font-weight:bold;border:none;cursor:pointer">Calculate Footprint</button>
+    <div id="result" style="margin-top:20px;font-size:1.1rem"></div>
+  </div>
+</section>
+
 <footer>
-  Data is from <a href="https://open-meteo.com" target="_blank" class="source">Open‑Meteo (Weather API)</a><.br>
+  Data is from <a href="https://open-meteo.com" target="_blank" class="source">Open‑Meteo (Weather API)</a><br>
   Make sure to refresh for the latest info every time.<br>
   Took 3 days to make this.
 </footer>
 
 <script>
-function calculateCO2() {
-  const electricity = Number(document.getElementById("electricity").value || 0);
-  const travel = Number(document.getElementById("travel").value || 0);
-  const electricityCO2 = electricity * 0.4;
-  const travelCO2 = travel * 0.21;
-  const total = (electricityCO2 + travelCO2).toFixed(2);
-  let status = "Low";
-  let color = "#7CFF7C";
-  if (total > 20) { status = "High"; color = "#ff5252"; }
-  else if (total > 10) { status = "Neutral"; color = "#ffd54f"; }
-  const resultBox = document.getElementById("result");
-  resultBox.innerHTML = `<strong>Total CO₂:</strong> ${total} kg/day<br>
-                         <strong>Status:</strong> <span style="color:${color}; font-weight:bold;">${status}</span>`;
-  resultBox.classList.remove("show");
-  void resultBox.offsetWidth;
-  resultBox.classList.add("show");
+function calculateCO2(){
+  const ele=document.getElementById("electricity").value;
+  const car=document.getElementById("travel").value;
+  const pub=document.getElementById("publicTransport").value;
+  const meat=document.getElementById("meat").value;
+  const plast=document.getElementById("plastic").value;
+  let total=0;
+  if(ele) total+=ele*0.4;
+  if(car) total+=car*0.21;
+  if(pub) total+=pub*0.05;
+  if(meat) total+=meat*0.02;
+  if(plast) total+=plast*0.1;
+  total=total.toFixed(2);
+  let status="Low",color="#7CFF7C";
+  if(total>20){status="High";color="#ff5252";}
+  else if(total>10){status="Neutral";color="#ffd54f";}
+  const res=document.getElementById("result");
+  res.innerHTML=`<strong>Total CO₂:</strong> ${total} kg/day<br><strong>Status:</strong> <span style="color:${color};font-weight:bold;">${status}</span>`;
+  res.classList.remove("show");
+  void res.offsetWidth;
+  res.classList.add("show");
 }
 
-const container = document.getElementById("weatherData");
-const url = "https://api.open-meteo.com/v1/forecast?latitude=24.4539&longitude=54.3773&current=temperature_2m,wind_speed_10m,uv_index&daily=sunrise,sunset&timezone=Asia/Dubai";
+const climate=document.getElementById("climateSection");
+const footprint=document.getElementById("footprintSection");
+const btnClimate=document.getElementById("btnClimate");
+const btnFootprint=document.getElementById("btnFootprint");
+function showSection(section){
+  if(section==="climate"){
+    btnClimate.classList.add("active"); btnFootprint.classList.remove("active");
+    footprint.style.opacity=0;
+    setTimeout(()=>{footprint.style.display="none"; climate.style.display="block"; setTimeout(()=>{climate.style.opacity=1},50)},300);
+  } else {
+    btnFootprint.classList.add("active"); btnClimate.classList.remove("active");
+    climate.style.opacity=0;
+    setTimeout(()=>{climate.style.display="none"; footprint.style.display="block"; setTimeout(()=>{footprint.style.opacity=1},50)},300);
+  }
+}
+
+window.addEventListener("scroll",()=>{
+  const topbar=document.getElementById("topbar");
+  if(window.scrollY>window.innerHeight-60) topbar.classList.add("show");
+  else topbar.classList.remove("show");
+});
+
+const container=document.getElementById("weatherData");
+const url="https://api.open-meteo.com/v1/forecast?latitude=24.4539&longitude=54.3773&current=temperature_2m,wind_speed_10m,uv_index&daily=sunrise,sunset&timezone=Asia/Dubai";
 fetch(url)
-.then(res => res.json())
-.then(data => {
-  const temp = data.current.temperature_2m;
-  const wind = data.current.wind_speed_10m;
-  const uv = data.current.uv_index;
-  const sunrise = data.daily.sunrise[0].split("T")[1];
-  const sunset = data.daily.sunset[0].split("T")[1];
-  container.innerHTML = `
+.then(res=>res.json())
+.then(data=>{
+  const temp=data.current.temperature_2m;
+  const wind=data.current.wind_speed_10m;
+  const uv=data.current.uv_index;
+  const sunrise=data.daily.sunrise[0].split("T")[1];
+  const sunset=data.daily.sunset[0].split("T")[1];
+  container.innerHTML=`
     <div class="card"><div class="value">${temp}°C</div><div class="label">Temperature</div><a class="source" href="https://open-meteo.com" target="_blank">Source</a></div>
     <div class="card"><div class="value">${uv}</div><div class="label">UV Index</div><a class="source" href="https://open-meteo.com" target="_blank">Source</a></div>
     <div class="card"><div class="value">${wind} km/h</div><div class="label">Wind Speed</div><a class="source" href="https://open-meteo.com" target="_blank">Source</a></div>
@@ -239,9 +209,7 @@ fetch(url)
     <div class="card"><div class="value">${sunset}</div><div class="label">Sunset</div><a class="source" href="https://open-meteo.com" target="_blank">Source</a></div>
   `;
 })
-.catch(() => { container.innerHTML = "<p>Failed to load climate data.</p>"; });
+.catch(()=>{container.innerHTML="<p>Failed to load climate data.</p>";});
 </script>
-
 </body>
 </html>
-
