@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<!-- saved from url=(0042)file:///C:/Users/muham/Desktop/tester.html -->
-<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en" class=""><head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>UAE Climate Hub | v49 OVERLOAD</title>
+    <title>UAE Climate Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Rajdhani:wght@300;500;700&amp;display=swap" rel="stylesheet">
     <style>
         :root { --cyan: #00f2ff; --purple: #bc13fe; --dark: #06060e; --border: rgba(0, 242, 255, 0.6); --red: #ff003c; --green: #00ff00; }
@@ -73,13 +71,13 @@
 <nav>
     <div style="display:flex; align-items:center;">
         <span class="pulse"></span>
-        <div id="clock">23:49:30</div>
+        <div id="clock">00:03:56</div>
     </div>
     <div class="nav-links">
-        <button class="nav-btn active" onclick="trigger(&#39;home&#39;, this)">WELCOME</button>
-        <button class="nav-btn" onclick="trigger(&#39;data&#39;, this)">CLIMATE DATA</button>
-        <button class="nav-btn" onclick="trigger(&#39;co2&#39;, this)">CO2 ANALYSIS</button>
-        <button class="nav-btn" onclick="trigger(&#39;ai&#39;, this)">NEURAL LINK</button>
+        <button class="nav-btn active" onclick="trigger('home', this)">WELCOME</button>
+        <button class="nav-btn" onclick="trigger('data', this)">CLIMATE DATA</button>
+        <button class="nav-btn" onclick="trigger('co2', this)">CO2 ANALYSIS</button>
+        <button class="nav-btn" onclick="trigger('ai', this)">NEURAL LINK</button>
         <button id="fxBtn" class="nav-btn fx-toggle-btn" onclick="toggleFX()">VISUAL FX: ON</button>
     </div>
 </nav>
@@ -88,7 +86,7 @@
     
     <section id="home" class="section active">
         <div class="card" style="text-align:center;">
-            <h1 style="font-family:&#39;Orbitron&#39;; font-size: 3.5em; color: var(--cyan); text-shadow: 3px 3px #ff0000;">UAE CLIMATE HUB</h1>
+            <h1 style="font-family:'Orbitron'; font-size: 3.5em; color: var(--cyan); text-shadow: 3px 3px #ff0000;">UAE CLIMATE HUB</h1>
             <p style="color:var(--purple); letter-spacing:10px; font-weight:bold; font-size: 1.2em; margin-top: 10px;">MUHAMMAD ASHAZ | GRADE 9E</p>
         </div>
         
@@ -102,17 +100,17 @@
         </div>
 
         <div class="card">
-            <h2 style="color:var(--cyan); font-family:&#39;Orbitron&#39;; margin-bottom:20px;">Interface Protocol</h2>
+            <h2 style="color:var(--cyan); font-family:'Orbitron'; margin-bottom:20px;">Interface Protocol</h2>
             <p style="line-height:2; font-size:1.3em;">Welcome to the website of the future. This terminal monitors the Arabian Peninsula's environmental shifts by cross-referencing satellite data with carbon emission metrics. Our goal is to provide a transparent look at the UAE's journey towards climate change.</p>
         </div>
     </section>
 
     <section id="data" class="section">
         <div class="card">
-            <h2 style="color:var(--purple); font-family: &#39;Orbitron&#39;; margin-bottom: 20px;">Why This Research Matters</h2>
+            <h2 style="color:var(--purple); font-family: 'Orbitron'; margin-bottom: 20px;">Why This Research Matters</h2>
             <p style="line-height: 1.8; font-size: 1.2em; color: #eee; margin-bottom: 15px;">Carbon management is the defining challenge for the UAE's future. The "Thermal Trap" phenomenon means that as global temperatures rise, the UAE requires significantly more energy for district cooling and desalination (which provides 90% of our water). Currently, AC alone consumes up to 70% of peak electricity. Breaking this cycle via the **UAE Net Zero 2050** strategic initiative is critical for preserving our coastline and ensuring water security for future generations.</p>
         </div><div class="card">
-            <h2 style="font-family:&#39;Orbitron&#39;; color:var(--cyan); margin-bottom:35px; text-align:center;">Climate Data</h2>
+            <h2 style="font-family:'Orbitron'; color:var(--cyan); margin-bottom:35px; text-align:center;">Climate Data</h2>
             <div class="grid">
                 <div class="box"><h4>TEMP</h4><p id="t">22.5°C</p></div>
                 <div class="box"><h4>UV INDEX</h4><p id="u">0</p></div>
@@ -126,14 +124,14 @@
         </div>
         
         <div class="card">
-            <h2 style="color:var(--cyan); font-family: &#39;Orbitron&#39;; margin-bottom: 20px;">UAE Regional Climate Analysis</h2>
+            <h2 style="color:var(--cyan); font-family: 'Orbitron'; margin-bottom: 20px;">UAE Regional Climate Analysis</h2>
             <p style="line-height: 1.8; font-size: 1.2em; color: #eee; margin-bottom: 15px;">The United Arab Emirates faces a unique climate profile defined by "Hyper-Arid conditions". During peak summer, the desert acts as a massive heat sink, with temperatures regularly hitting 48-50°C. Coastal humidity, driven by the warm waters of the Arabian Gulf, often reaches 90%, creating a dangerous "Heat Index" where evaporation cooling for the human body becomes impossible. The Shamal Winds further complicate this by introducing heavy particulate matter from the interior desert, impacting air quality across the nation.</p>
         </div>
 
         
 
         <div class="card">
-            <h2 style="color:var(--cyan); font-family: &#39;Orbitron&#39;; margin-bottom: 25px;">UV RADIATION PROTOCOLS</h2>
+            <h2 style="color:var(--cyan); font-family: 'Orbitron'; margin-bottom: 25px;">UV RADIATION PROTOCOLS</h2>
             
             <div class="uv-row" style="border-color: #00ff88; color: #00ff88;">0-2 (Low): Safe to be outside. Minimal sun protection needed.</div>
             <div class="uv-row" style="border-color: #ffff00; color: #ffff00;">3-5 (Moderate): Some risk. Shade, sunscreen, and sunglasses are smart.</div>
@@ -144,7 +142,7 @@
 
     <section id="co2" class="section">
         <div class="card">
-            <h2 style="font-family:&#39;Orbitron&#39;; text-align:center; color:var(--purple); margin-bottom:40px;">CARBON SCANNER (ROW LIST)</h2>
+            <h2 style="font-family:'Orbitron'; text-align:center; color:var(--purple); margin-bottom:40px;">CARBON SCANNER (ROW LIST)</h2>
             <div class="input-row"><label>WEEKLY CAR TRAVEL (KM)</label><input type="number" id="v1" placeholder="0"></div>
             <div class="input-row"><label>WEEKLY MEAT (G)</label><input type="number" id="v2" placeholder="0"></div>
             <div class="input-row"><label>DAILY AC HOURS</label><input type="number" id="v3" placeholder="0"></div>
@@ -152,16 +150,16 @@
             <div class="input-row"><label>DAILY SCREEN TIME (HRS)</label><input type="number" id="v5" placeholder="0"></div>
             <div class="input-row"><label>ANNUAL FLIGHTS</label><input type="number" id="v6" placeholder="0"></div>
             <button class="nav-btn" style="width:100%; padding:30px; font-size:2em;" onclick="calc()">EXECUTE FULL SCAN</button>
-            <div id="res" style="text-align:center; margin-top:40px; font-family:&#39;Orbitron&#39;; font-size:4.5em; color:var(--cyan);">[READY]</div>
+            <div id="res" style="text-align:center; margin-top:40px; font-family:'Orbitron'; font-size:4.5em; color:var(--cyan);">[READY]</div>
         </div>
     </section>
 
     <section id="ai" class="section">
         <div class="card">
-            <h2 style="font-family:&#39;Orbitron&#39;; color:var(--purple); margin-bottom:30px;">NEURAL LINK</h2>
+            <h2 style="font-family:'Orbitron'; color:var(--purple); margin-bottom:30px;">NEURAL LINK</h2>
             <div id="chat">&gt; UPLINK ESTABLISHED. TYPE 'HELP' TO USE THE AI...</div>
             <div style="display:flex; gap:15px;">
-                <input type="text" id="ai-in" placeholder="Query Matrix..." onkeydown="if(event.key === &#39;Enter&#39;) ask()">
+                <input type="text" id="ai-in" placeholder="Query Matrix..." onkeydown="if(event.key === 'Enter') ask()">
                 <button class="nav-btn" onclick="ask()" style="padding:0 50px;">SEND</button>
             </div>
         </div>
@@ -257,4 +255,3 @@
 </script>
 
 </body></html>
-
